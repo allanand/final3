@@ -13,6 +13,40 @@ import Snippet from "components/Snippet";
 
 import gatsby_astronaut from "assets/images/gatsby-astronaut.jpg";
 
+ /*
+require('dotenv').config();
+const fetch = (...args) => import ('node-fetch').then(({default: fetch}) => fetch(...args));
+const startggURL = "https://api.start.gg/gql/alpha";
+const startggKey = process.env.STARTGG_KEY;
+
+const getEventID = (tournamentName, eventName) => {
+  const eventSlug =`tournamant/${tournamentName}/event/${eventName}`;
+  let eventId;
+  fetch (startggURL, {
+    method: 'POST',
+    headers: {
+      'content-type':'application/json',
+      'Accept' : 'application/json',
+      Authorization: 'Bearer ' + startggKey
+    },
+    body: JSON.stringify({
+      query: "query EventQuery($slug:String) {event(slug: $slug) {id name}}",
+      variables: {
+        slug:eventSlug
+      },
+    })
+  }).then(r => r.json())
+  .then(data => {
+    console.log(data.data);
+    eventId = data.data.event.id;
+  })
+  return eventId;
+}
+
+getEventID('spartan-circus-1','smash-ultimate-singles');
+
+*/
+
 const LOCATION = {
   lat: 42.723301,
   lng: -84.481667,
@@ -76,7 +110,6 @@ const IndexPage = () => {
         <p>Communication Arts and Science Building - Room 154</p>
         <p>404 Wilson Rd, East Lansing, MI 48824</p>
       </Container>
-            
     </Layout>
   );
 };
