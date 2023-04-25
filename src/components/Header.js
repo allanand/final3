@@ -13,16 +13,15 @@ const Header = () => {
     <header>
       <Container type="content">
         <p>
-          <Link to="/">{companyName}</Link>
+          MSU Smash Ultimate Data
         </p>
         <ul>
           <li>
-            <Link to="/about/">About</Link>
+            <Link to="https://allanand.netlify.app//">Author</Link>
           </li>
           <li>
             <a href={companyUrl}>
               <span className="visually-hidden">Github</span>
-              <FaGithub />
             </a>
           </li>
         </ul>

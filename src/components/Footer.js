@@ -11,8 +11,7 @@ const Footer = () => {
     <footer>
       <Container>
         <p>
-          &copy; {new Date().getFullYear()},{" "}
-          <a href={authorUrl}>{authorName}</a>
+        <a href="https://allanand.netlify.app/" target="_blank">Andrew Allan {new Date().getFullYear()}</a >
         </p>
       </Container>
     </footer>

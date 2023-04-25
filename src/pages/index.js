@@ -14,12 +14,12 @@ import Snippet from "components/Snippet";
 import gatsby_astronaut from "assets/images/gatsby-astronaut.jpg";
 
 const LOCATION = {
-  lat: 38.9072,
-  lng: -77.0369,
+  lat: 42.723301,
+  lng: -84.481667,
 };
 const CENTER = [LOCATION.lat, LOCATION.lng];
-const DEFAULT_ZOOM = 2;
-const ZOOM = 10;
+const DEFAULT_ZOOM = 16;
+const ZOOM = 16;
 
 const timeToZoom = 2000;
 const timeToOpenPopupAfterZoom = 4000;
@@ -46,38 +46,7 @@ const popupContentGatsby = `
 const MapEffect = ({ markerRef }) => {
   const map = useMap();
 
-  useEffect(() => {
-    if (!markerRef.current || !map) return;
 
-    (async function run() {
-      const popup = L.popup({
-        maxWidth: 800,
-      });
-
-      const location = await getCurrentLocation().catch(() => LOCATION);
-
-      const { current: marker } = markerRef || {};
-
-      marker.setLatLng(location);
-      popup.setLatLng(location);
-      popup.setContent(popupContentHello);
-
-      setTimeout(async () => {
-        await promiseToFlyTo(map, {
-          zoom: ZOOM,
-          center: location,
-        });
-
-        marker.bindPopup(popup);
-
-        setTimeout(() => marker.openPopup(), timeToOpenPopupAfterZoom);
-        setTimeout(
-          () => marker.setPopupContent(popupContentGatsby),
-          timeToUpdatePopupAfterZoom
-        );
-      }, timeToZoom);
-    })();
-  }, [map, markerRef]);
 
   return null;
 };
@@ -97,26 +66,17 @@ const IndexPage = () => {
 
   return (
     <Layout pageName="home">
-      <Helmet>
-        <title>Home Page</title>
-      </Helmet>
-
-      <Map {...mapSettings}>
+       <Map {...mapSettings}>
         <MapEffect markerRef={markerRef} />
         <Marker ref={markerRef} position={CENTER} />
       </Map>
 
       <Container type="content" className="text-center home-start">
-        <h2>Still Getting Started?</h2>
-        <p>Run the following in your terminal!</p>
-        <Snippet>
-          gatsby new [directory]
-          https://github.com/colbyfayock/gatsby-starter-leaflet
-        </Snippet>
-        <p className="note">
-          Note: Gatsby CLI required globally for the above command
-        </p>
+        <h2>Location</h2>
+        <p>Communication Arts and Science Building - Room 154</p>
+        <p>404 Wilson Rd, East Lansing, MI 48824</p>
       </Container>
+            
     </Layout>
   );
 };
