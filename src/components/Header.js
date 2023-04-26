@@ -10,21 +10,11 @@ const Header = () => {
   const { companyName, companyUrl } = useSiteMetadata();
 
   return (
-    <header>
+    <header class="bg-success">
       <Container type="content">
         <p>
           MSU Smash Ultimate Data
         </p>
-        <ul>
-          <li>
-            <Link to="https://allanand.netlify.app//">Author</Link>
-          </li>
-          <li>
-            <a href={companyUrl}>
-              <span className="visually-hidden">Github</span>
-            </a>
-          </li>
-        </ul>
       </Container>
     </header>
   );

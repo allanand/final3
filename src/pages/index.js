@@ -13,7 +13,18 @@ import Snippet from "components/Snippet";
 
 import gatsby_astronaut from "assets/images/gatsby-astronaut.jpg";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
+import $ from 'jquery';
+import Popper from 'popper.js';
+
+
+
  /*
+There appears to be some sort of module error causing this to not work 
+https://stackoverflow.com/questions/59911706/module-not-found-error-cant-resolve-fs-in-node-modules-dotenv-lib
+
 require('dotenv').config();
 const fetch = (...args) => import ('node-fetch').then(({default: fetch}) => fetch(...args));
 const startggURL = "https://api.start.gg/gql/alpha";
@@ -105,13 +116,31 @@ const IndexPage = () => {
         <Marker ref={markerRef} position={CENTER} />
       </Map>
 
-      <Container type="content" className="text-center home-start">
-        <h2>Location</h2>
-        <p>Communication Arts and Science Building - Room 154</p>
-        <p>404 Wilson Rd, East Lansing, MI 48824</p>
+      <Container type="content" className="text-center home-start" >
+        <h2><u>Location</u></h2>
+        <ul class = "list-unstyled">
+            <li class="text-success">Communication Arts and Science Building - Room 154</li>
+            <li class="text-success">404 Wilson Rd, East Lansing, MI 48824</li>
+            
+        </ul>   
       </Container>
     </Layout>
   );
 };
-
+<span class="badge badge-secondary">New</span>
 export default IndexPage;
+
+
+ /*
+ I am having an issue getting the image source to load directly from the file 
+    <li><img class ='w-25 p-5 'src="https://cdn.discordapp.com/attachments/884941110558990406/1091907865385648208/MSU_logo_png.png"      alt="MSU Smash Ultimate Club Emblem" ></img></li>
+    <li><img src="MSU.png" alt="MSU Smash Ultimate Club Emblem" ></img></li>
+  */
+
+
+     /*
+     Sources for my assignment...
+     1) https://www.colbyfayock.com/posts/how-to-create-a-coronavirus-covid-19-dashboard-map-app-with-gatsby-and-leaflet/
+     2) https://youtu.be/7xkN-cbS4DU
+     3) https://developer.start.gg/docs/intro/
+     */

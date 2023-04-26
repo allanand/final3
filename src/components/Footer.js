@@ -8,10 +8,10 @@ const Footer = () => {
   const { authorName, authorUrl } = useSiteMetadata();
 
   return (
-    <footer>
+    <footer class="bg-success">
       <Container>
         <p>
-        <a href="https://allanand.netlify.app/" target="_blank">Andrew Allan {new Date().getFullYear()}</a >
+          <a href="https://allanand.netlify.app/" target="_blank" class="text-light link-info">Andrew Allan {new Date().getFullYear()}</a >
         </p>
       </Container>
     </footer>
