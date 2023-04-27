@@ -16,6 +16,7 @@ const siteMetadata = {
   title: `test`
 };
 
+
 module.exports = {
   siteMetadata,
   plugins: [
@@ -60,5 +61,6 @@ module.exports = {
     },
   ]
 };
+
 
 

@@ -21,9 +21,12 @@ import Popper from 'popper.js';
 
 import MSU from "../assets/images/MSU.png";
 
+import { graphql, Link } from "gatsby"
+
  /*import { graphql, useStaticQuery } from "gatsby"*/
-import { graphql } from "gatsby"
-export const query = graphql
+
+
+
 
  /*
  curl 'https://api.start.gg/gql/alpha'  
@@ -73,12 +76,6 @@ const getEventID = (tournamentName, eventName) => {
 getEventID('spartan-circus-1','smash-ultimate-singles');
 */
 
-
-
-
-
-
-
 const LOCATION = {
   lat: 42.723301,
   lng: -84.481667,
@@ -108,6 +105,9 @@ const popupContentGatsby = `
  * MapEffect
  * @description This is an example of creating an effect used to zoom in and set a popup on load
  */
+
+
+
 
 const MapEffect = ({ markerRef }) => {
   const map = useMap();
@@ -154,18 +154,35 @@ const IndexPage = () => {
 <span class="badge badge-secondary">New</span>
 export default IndexPage;
 
+/**/
+  export function Home ({data}) {
+      console.log(data)
+      const { bio } = data.site.siteMetadata
+   
+     return (
+        <div>
+        <p class="text-danger">{ bio }</p>
+        </div>
+     );
+    };
 
- /*
- I am having an issue getting the image source to load directly from the file 
-    <img src={require('assets/images/MSU.png')}/>
+     export const query = graphql`
+     query MyQuery {
+      startgg {
+        currentUser {
+          bio
+          player {
+            gamerTag
+            id
+            prefix
+          }
+        }
+      }
+    }
+     `
 
-   <li><img class ='w-25 p-5 'src="https://cdn.discordapp.com/attachments/884941110558990406/1091907865385648208/MSU_logo_png.png" alt="MSU Smash Ultimate Club Emblem" ></img></li>
-
-    <li><img src="MSU.png" alt="MSU Smash Ultimate Club Emblem" ></img></li>
-  */
-
-
-     /*
+     
+         /*
      Sources for my assignment...
      1) https://www.colbyfayock.com/posts/how-to-create-a-coronavirus-covid-19-dashboard-map-app-with-gatsby-and-leaflet/
      2) https://youtu.be/7xkN-cbS4DU
