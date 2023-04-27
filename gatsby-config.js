@@ -1,14 +1,19 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 const config = require("./package.json");
 
 const { title, description, author, repository, homepage } = config;
 
 const siteMetadata = {
-  companyName: title,
+  companyName: `test`,
   companyUrl: repository.url,
   authorName: author.name,
   authorUrl: author.url,
   siteUrl: homepage,
   siteDescription: description,
+  title: `test`
 };
 
 module.exports = {
@@ -39,5 +44,21 @@ module.exports = {
         icon: "src/assets/images/react-leaflet-icon.png",
       },
     },
-  ],
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // Arbitrary name for the remote schema Query type
+        typeName: "STARTGG",
+        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+        fieldName: "startgg",
+        // Url to query from
+        url: "https://api.start.gg/gql/alpha",
+        headers: {
+          Authorization: `Bearer b613581b58f81f3d2c74a19c3a7e848a`,
+        },
+      },
+    },
+  ]
 };
+
+

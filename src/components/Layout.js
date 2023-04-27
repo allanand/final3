@@ -7,7 +7,18 @@ import "assets/stylesheets/application.scss";
 import Header from "components/Header";
 import Footer from "components/Footer";
 
+import { Link, useStaticQuery, graphql } from 'gatsby';
+
 const Layout = ({ children, pageName }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
   let className = "";
 
   if (pageName) {
@@ -20,6 +31,7 @@ const Layout = ({ children, pageName }) => {
         <title>Gatsby Site</title>
       </Helmet>
       <div className="wrapper">
+      <h1>{data.site.siteMetadata.title}</h1>
         <Header />
         <main>{children}</main>
         <Footer />

@@ -19,13 +19,29 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import $ from 'jquery';
 import Popper from 'popper.js';
 
+import MSU from "../assets/images/MSU.png";
 
+ /*import { graphql, useStaticQuery } from "gatsby"*/
+import { graphql } from "gatsby"
+export const query = graphql
+
+ /*
+ curl 'https://api.start.gg/gql/alpha'  
+ 
+ https://curl.se/docs/httpscripting.html/*
+ 
+ /*
+ {
+  "query": "...",
+  "operationName": "...",
+  "variables": { "myVariable": "someValue", ... }
+}
+ */
 
  /*
 There appears to be some sort of module error causing this to not work 
 https://stackoverflow.com/questions/59911706/module-not-found-error-cant-resolve-fs-in-node-modules-dotenv-lib
 
-require('dotenv').config();
 const fetch = (...args) => import ('node-fetch').then(({default: fetch}) => fetch(...args));
 const startggURL = "https://api.start.gg/gql/alpha";
 const startggKey = process.env.STARTGG_KEY;
@@ -55,8 +71,13 @@ const getEventID = (tournamentName, eventName) => {
 }
 
 getEventID('spartan-circus-1','smash-ultimate-singles');
-
 */
+
+
+
+
+
+
 
 const LOCATION = {
   lat: 42.723301,
@@ -109,6 +130,9 @@ const IndexPage = () => {
     zoom: DEFAULT_ZOOM,
   };
 
+
+
+  
   return (
     <Layout pageName="home">
        <Map {...mapSettings}>
@@ -121,7 +145,7 @@ const IndexPage = () => {
         <ul class = "list-unstyled">
             <li class="text-success">Communication Arts and Science Building - Room 154</li>
             <li class="text-success">404 Wilson Rd, East Lansing, MI 48824</li>
-            
+            <li><img src={MSU} class='w-25 p-5'alt="MSU Smash Ultimate Club Emblem"></img></li>
         </ul>   
       </Container>
     </Layout>
@@ -133,7 +157,10 @@ export default IndexPage;
 
  /*
  I am having an issue getting the image source to load directly from the file 
-    <li><img class ='w-25 p-5 'src="https://cdn.discordapp.com/attachments/884941110558990406/1091907865385648208/MSU_logo_png.png"      alt="MSU Smash Ultimate Club Emblem" ></img></li>
+    <img src={require('assets/images/MSU.png')}/>
+
+   <li><img class ='w-25 p-5 'src="https://cdn.discordapp.com/attachments/884941110558990406/1091907865385648208/MSU_logo_png.png" alt="MSU Smash Ultimate Club Emblem" ></img></li>
+
     <li><img src="MSU.png" alt="MSU Smash Ultimate Club Emblem" ></img></li>
   */
 
