@@ -21,7 +21,9 @@ import Popper from 'popper.js';
 
 import MSU from "../assets/images/MSU.png";
 
-import { graphql, Link } from "gatsby"
+  /*import { graphql, Link } from "gatsby"*/
+
+
 
  /*import { graphql, useStaticQuery } from "gatsby"*/
 
