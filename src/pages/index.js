@@ -154,7 +154,7 @@ const IndexPage = () => {
 <span class="badge badge-secondary">New</span>
 export default IndexPage;
 
-/**/
+/*
   export function Home ({data}) {
       console.log(data)
       const { bio } = data.site.siteMetadata
@@ -180,7 +180,7 @@ export default IndexPage;
       }
     }
      `
-
+*/
      
          /*
      Sources for my assignment...
