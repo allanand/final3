@@ -12,9 +12,7 @@ const Header = () => {
   return (
     <header class="bg-success">
       <Container type="content">
-        <p>
-          MSU Smash Ultimate Data
-        </p>
+        <p>MSU Smash Ultimate Data</p>
       </Container>
     </header>
   );

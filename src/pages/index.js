@@ -55,7 +55,7 @@ const IndexPage = () => {
 
   return (
   <Layout pageName="home">
-    <body>
+    <body class="m-4 p-2">
         <Map {...mapSettings}>
           <MapEffect markerRef={markerRef} />
           <Marker ref={markerRef} position={CENTER} />
