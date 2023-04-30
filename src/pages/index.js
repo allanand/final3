@@ -25,6 +25,7 @@ import React, { useRef, useEffect } from "react";
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
 
+
 const LOCATION = {
   lat: 42.723301,
   lng: -84.481667,
@@ -78,9 +79,7 @@ const IndexPage = () => {
   };
 
   
-
   
-  const Page = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>
   const data = useStaticQuery(graphql`
   query MyQuery {
     startgg {
@@ -134,8 +133,7 @@ const IndexPage = () => {
           <tbody>
               <tr>
                 <th scope="row"></th>
-                <td>{JSON.stringify(data, null, )}</td>
-                <td><pre>{JSON.stringify(data, null, 1)}</pre></td>
+                <td><pre>{JSON.stringify(data, null,1)}</pre></td>
               </tr>
            </tbody>
       </table>
