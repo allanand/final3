@@ -77,16 +77,30 @@ const IndexPage = () => {
     zoom: DEFAULT_ZOOM,
   };
 
+  
 
-
+  
+  const Page = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>
   const data = useStaticQuery(graphql`
   query MyQuery {
     startgg {
-      currentUser {
-        bio
+      phase(id: "1297698") {
+        phaseGroups {
+          nodes {
+            paginatedSeeds(query: {}) {
+              nodes {
+                placement
+                players {
+                  gamerTag
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
+  
   `)
 
 
@@ -120,7 +134,8 @@ const IndexPage = () => {
           <tbody>
               <tr>
                 <th scope="row"></th>
-                <td>{data.startgg.currentUser.bio}</td>
+                <td>{JSON.stringify(data, null, )}</td>
+                <td><pre>{JSON.stringify(data, null, 1)}</pre></td>
               </tr>
            </tbody>
       </table>
@@ -137,13 +152,12 @@ const IndexPage = () => {
            </tbody>
       </table>
       </Container>
-      
+
     </Layout>
   );
 };
 
 export default IndexPage;
-
 
 
 
