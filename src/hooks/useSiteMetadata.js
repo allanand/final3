@@ -5,10 +5,7 @@ export default function useSiteMetadata() {
     query SiteMetaData {
       site {
         siteMetadata {
-          authorName
-          authorUrl
           companyName
-          companyUrl
           siteDescription
         }
       }
