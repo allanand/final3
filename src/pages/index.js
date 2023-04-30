@@ -1,27 +1,12 @@
-import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
-import L from "leaflet";
+
 import { Marker, useMap } from "react-leaflet";
-
-import { promiseToFlyTo, getCurrentLocation } from "lib/map";
-
 import Layout from "components/Layout";
 import Container from "components/Container";
 import Map from "components/Map";
-import Snippet from "components/Snippet";
-
-import gatsby_astronaut from "assets/images/gatsby-astronaut.jpg";
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-
-import $ from 'jquery';
-import Popper from 'popper.js';
-
 import MSU from "../assets/images/MSU.png";
-
 import React, { useRef, useEffect } from "react";
-
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
 
