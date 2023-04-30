@@ -25,6 +25,7 @@ import React, { useRef, useEffect } from "react";
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
 
+
 const LOCATION = {
   lat: 42.722675906798486,
   lng: -84.4813998711634,
@@ -70,69 +71,61 @@ const IndexPage = () => {
   
   `)
 
-
-
   return (
     <Layout pageName="home">
-  
-       <Map {...mapSettings}>
-        <MapEffect markerRef={markerRef} />
-        <Marker ref={markerRef} position={CENTER} />
-      </Map>
+   <body>
+        <Map {...mapSettings}>
+          <MapEffect markerRef={markerRef} />
+          <Marker ref={markerRef} position={CENTER} />
+        </Map>
 
-      <Container>
-      <table class="table">
-          <tbody>
-              <tr>
-                <th scope="row"></th>
-                <td>Communication Arts and Science Building - Room 154</td>
-                <td>404 Wilson Rd, East Lansing, MI 48824</td>
-              </tr>
-           </tbody>
-      </table>
-      </Container>
+        <Container type="content" className="text-center">
+        <table class="table">
+            <tbody>
+                <tr>
+                  <th scope="row"></th>
+                    <td>Communication Arts and Science Building - Room 154</td>
+                    <td>404 Wilson Rd, East Lansing, MI 48824</td>
+                </tr>
+            </tbody>
+        </table>
+        </Container>
 
 
 
-      <Container type="content" className="text-center">
-      <h2 class="text-center text-success"><u>Recent Results:</u></h2>
-      <h3>Spartan Circus</h3>
-      <table class="table">
-          <tbody>
-              <tr>
-                <th scope="row"></th>
-                <td><pre>{JSON.stringify(data, null, 1)}</pre></td>
-              </tr>
-           </tbody>
-      </table>
-      </Container>
+        <Container type="content" className="text-center">
+        <h2 class="text-center text-success"><u>Recent Results:</u></h2>
+        <h3>Spartan Circus</h3>
+        <table class="table">
+            <tbody>
+                <tr>
+                  <th scope="row"></th>
+                  <td class="bg-success text-white"><pre>{JSON.stringify(data, null, 1)}</pre></td>
+                </tr>
+            </tbody>
+        </table>
+        </Container>
 
-      <Container type="content" className="text-center">
-      <table class="table">
-          <tbody>
-              <tr>
-                <th scope="row">
-                 <img src={MSU} class='w-25 p-5'alt="MSU Smash Ultimate Club Emblem"></img>
-                </th>
-              </tr>
-           </tbody>
-      </table>
-      </Container>
+        <Container type="content" className="text-center">
+        <table class="table">
+            <tbody>
+                <tr>
+                  <th scope="row">
+                    <div>
+                      <img src={MSU} class='w-25 p-5'alt="MSU Smash Ultimate Club Emblem"></img>
+                    </div>
+                  </th>
+                </tr>
+            </tbody>
+        </table>
+        </Container>
+      </body>
 
-    </Layout>
+      </Layout>
   );
 };
 
 export default IndexPage;
-
-
-
-
-
-
-
-
-
 
 
 /*
@@ -162,10 +155,9 @@ export default IndexPage;
     }
      `
 */
-     
-         /*
-     Sources for my assignment...
-     1) https://www.colbyfayock.com/posts/how-to-create-a-coronavirus-covid-19-dashboard-map-app-with-gatsby-and-leaflet/
-     2) https://youtu.be/7xkN-cbS4DU
-     3) https://developer.start.gg/docs/intro/
-     */
+  
+/*
+  Sources for my assignment...
+  1) https://www.colbyfayock.com/posts/how-to-create-a-coronavirus-covid-19-dashboard-map-app-with-gatsby-and-leaflet/
+  2) https://developer.start.gg/docs/intro/
+*/
