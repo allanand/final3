@@ -1,5 +1,5 @@
 Project Statement:
-For my final project, I decided to create a resource site for my club (The MSU Smash Ultimate Club). This site is managed through Gatsby and Yarn. I wanted my site to include 3 data resourses being: Start.gg Api (to collect tournament results), Leaflet Api (to map out the location of our events), and Supabase (to show projected ranking of top players for the season). However, having 3 data resources would become a huge hassel, so I decided to narrow it down to two being Start.gg and Leaflet. I also used the Bootstrap framework to make any aesthetic changes.
+For my final project, I decided to create a resource site for my club (The MSU Smash Ultimate Club). This site is managed through Gatsby and Yarn. I wanted my site to include 3 data resourses being: Start.gg Api (to collect tournament results), Leaflet Api (to map out the location of our events), and Supabase (to show projected ranking of top players for the season). However, having 3 data resources would become a huge hassel, so I decided to narrow it down to two being Start.gg and Leaflet. I also used the Bootstrap framework to make any aesthetic changes. I added my Wireframe-comp as a folder called "Preproduction" 
 
 My Work: 
 1. https://github.com/allanand/final3
