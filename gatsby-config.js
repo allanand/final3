@@ -13,7 +13,7 @@ const siteMetadata = {
   authorUrl: author.url,
   siteUrl: homepage,
   siteDescription: description,
-  title: `test`
+  title: `hi`
 };
 
 

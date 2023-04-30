@@ -31,7 +31,6 @@ const Layout = ({ children, pageName }) => {
         <title>Gatsby Site</title>
       </Helmet>
       <div className="wrapper">
-      <h1>{data.site.siteMetadata.title}</h1>
         <Header />
         <main>{children}</main>
         <Footer />

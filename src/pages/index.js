@@ -25,53 +25,20 @@ import React, { useRef, useEffect } from "react";
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
 
-
 const LOCATION = {
-  lat: 42.723301,
-  lng: -84.481667,
+  lat: 42.722675906798486,
+  lng: -84.4813998711634,
 };
 const CENTER = [LOCATION.lat, LOCATION.lng];
 const DEFAULT_ZOOM = 16;
-const ZOOM = 16;
-
-const timeToZoom = 2000;
-const timeToOpenPopupAfterZoom = 4000;
-const timeToUpdatePopupAfterZoom = timeToOpenPopupAfterZoom + 3000;
-
-const popupContentHello = `<p>Hello 👋</p>`;
-const popupContentGatsby = `
-  <div class="popup-gatsby">
-    <div class="popup-gatsby-image">
-      <img class="gatsby-astronaut" src=${gatsby_astronaut} />
-    </div>
-    <div class="popup-gatsby-content">
-      <h1>Gatsby Leaflet Starter</h1>
-      <p>Welcome to your new Gatsby site. Now go build something great!</p>
-    </div>
-  </div>
-`;
-
-/**
- * MapEffect
- * @description This is an example of creating an effect used to zoom in and set a popup on load
- */
-
 
 const MapEffect = ({ markerRef }) => {
   const map = useMap();
-
-
-
   return null;
-};
-
-MapEffect.propTypes = {
-  markerRef: PropTypes.object,
 };
 
 const IndexPage = () => {
   const markerRef = useRef();
-
   const mapSettings = {
     center: CENTER,
     defaultBaseMap: "OpenStreetMap",
@@ -79,7 +46,8 @@ const IndexPage = () => {
   };
 
   
-  
+
+  const Page = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>
   const data = useStaticQuery(graphql`
   query MyQuery {
     startgg {
@@ -133,7 +101,7 @@ const IndexPage = () => {
           <tbody>
               <tr>
                 <th scope="row"></th>
-                <td><pre>{JSON.stringify(data, null,1)}</pre></td>
+                <td><pre>{JSON.stringify(data, null, 1)}</pre></td>
               </tr>
            </tbody>
       </table>
@@ -156,6 +124,7 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
 
 
 
