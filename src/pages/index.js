@@ -1,4 +1,3 @@
-
 import { Marker, useMap } from "react-leaflet";
 import Layout from "components/Layout";
 import Container from "components/Container";
@@ -57,7 +56,7 @@ const IndexPage = () => {
   `)
 
   return (
-    <Layout pageName="home">
+  <Layout pageName="home">
    <body>
         <Map {...mapSettings}>
           <MapEffect markerRef={markerRef} />
@@ -65,48 +64,47 @@ const IndexPage = () => {
         </Map>
 
         <Container type="content" className="text-center">
-        <table class="table">
-            <tbody>
-                <tr>
-                  <th scope="row"></th>
-                    <td>Communication Arts and Science Building - Room 154</td>
-                    <td>404 Wilson Rd, East Lansing, MI 48824</td>
-                </tr>
-            </tbody>
-        </table>
+          <table class="table">
+              <tbody>
+                  <tr>
+                    <th scope="row"></th>
+                      <td>Communication Arts and Science Building - Room 154</td>
+                      <td>404 Wilson Rd, East Lansing, MI 48824</td>
+                  </tr>
+              </tbody>
+          </table>
         </Container>
 
 
 
         <Container type="content" className="text-center">
-        <h2 class="text-center text-success"><u>Recent Results:</u></h2>
-        <h3>Spartan Circus</h3>
-        <table class="table">
-            <tbody>
-                <tr>
-                  <th scope="row"></th>
-                  <td class="bg-success text-white"><pre>{JSON.stringify(data, null, 1)}</pre></td>
-                </tr>
-            </tbody>
-        </table>
+          <h2 class="text-center text-success"><u>Recent Results:</u></h2>
+          <h3>Spartan Circus</h3>
+          <table class="table">
+              <tbody>
+                  <tr>
+                    <th scope="row"></th>
+                    <td class="bg-success text-white"><pre>{JSON.stringify(data, null, 1)}</pre></td>
+                  </tr>
+              </tbody>
+          </table>
         </Container>
 
         <Container type="content" className="text-center">
-        <table class="table">
-            <tbody>
-                <tr>
-                  <th scope="row">
-                    <div>
-                      <img src={MSU} class='w-25 p-5'alt="MSU Smash Ultimate Club Emblem"></img>
-                    </div>
-                  </th>
-                </tr>
-            </tbody>
-        </table>
+          <table class="table">
+              <tbody>
+                  <tr>
+                    <th scope="row">
+                      <div>
+                        <img src={MSU} class='w-25 p-5'alt="MSU Smash Ultimate Club Emblem"></img>
+                      </div>
+                    </th>
+                  </tr>
+              </tbody>
+          </table>
         </Container>
       </body>
-
-      </Layout>
+  </Layout>
   );
 };
 
