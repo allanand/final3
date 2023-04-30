@@ -114,7 +114,8 @@ const IndexPage = () => {
 
 
       <Container type="content" className="text-center">
-      <h2 class="text-center text-success"><u>Recent Results</u></h2>
+      <h2 class="text-center text-success"><u>Recent Results:</u></h2>
+      <h3>Spartan Circus</h3>
       <table class="table">
           <tbody>
               <tr>
@@ -136,9 +137,7 @@ const IndexPage = () => {
            </tbody>
       </table>
       </Container>
-
-
-
+      
     </Layout>
   );
 };
