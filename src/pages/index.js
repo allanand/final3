@@ -30,8 +30,6 @@ const IndexPage = () => {
     zoom: DEFAULT_ZOOM,
   };
 
-  
-
   const Page = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>
   const data = useStaticQuery(graphql`
   query MyQuery {
@@ -57,7 +55,7 @@ const IndexPage = () => {
 
   return (
   <Layout pageName="home">
-   <body>
+    <body>
         <Map {...mapSettings}>
           <MapEffect markerRef={markerRef} />
           <Marker ref={markerRef} position={CENTER} />
