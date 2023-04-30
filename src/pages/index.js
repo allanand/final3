@@ -93,22 +93,52 @@ const IndexPage = () => {
 
   return (
     <Layout pageName="home">
+  
        <Map {...mapSettings}>
         <MapEffect markerRef={markerRef} />
         <Marker ref={markerRef} position={CENTER} />
       </Map>
 
-      <Container type="content" className="text-center home-start" >
-        <h2><u>Location</u></h2>
-        <ul class = "list-unstyled">
-            <li class="text-success">Communication Arts and Science Building - Room 154</li>
-            <li class="text-success">404 Wilson Rd, East Lansing, MI 48824</li>
-            <li><img src={MSU} class='w-25 p-5'alt="MSU Smash Ultimate Club Emblem"></img></li>
-            <li>{data.startgg.currentUser.bio}</li>
-
-        </ul>   
+      <Container>
+      <table class="table">
+          <tbody>
+              <tr>
+                <th scope="row"></th>
+                <td>Communication Arts and Science Building - Room 154</td>
+                <td>404 Wilson Rd, East Lansing, MI 48824</td>
+              </tr>
+           </tbody>
+      </table>
       </Container>
-   
+
+
+
+      <Container type="content" className="text-center">
+      <h2 class="text-center text-success"><u>Recent Results</u></h2>
+      <table class="table">
+          <tbody>
+              <tr>
+                <th scope="row"></th>
+                <td>{data.startgg.currentUser.bio}</td>
+              </tr>
+           </tbody>
+      </table>
+      </Container>
+
+      <Container type="content" className="text-center">
+      <table class="table">
+          <tbody>
+              <tr>
+                <th scope="row">
+                 <img src={MSU} class='w-25 p-5'alt="MSU Smash Ultimate Club Emblem"></img>
+                </th>
+              </tr>
+           </tbody>
+      </table>
+      </Container>
+
+
+
     </Layout>
   );
 };
