@@ -1,4 +1,3 @@
-import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import L from "leaflet";
@@ -21,62 +20,10 @@ import Popper from 'popper.js';
 
 import MSU from "../assets/images/MSU.png";
 
-  /*import { graphql, Link } from "gatsby"*/
+import React, { useRef, useEffect } from "react";
 
+import { Link, useStaticQuery, graphql } from 'gatsby'
 
-
- /*import { graphql, useStaticQuery } from "gatsby"*/
-
-
-
-
- /*
- curl 'https://api.start.gg/gql/alpha'  
- 
- https://curl.se/docs/httpscripting.html/*
- 
- /*
- {
-  "query": "...",
-  "operationName": "...",
-  "variables": { "myVariable": "someValue", ... }
-}
- */
-
- /*
-There appears to be some sort of module error causing this to not work 
-https://stackoverflow.com/questions/59911706/module-not-found-error-cant-resolve-fs-in-node-modules-dotenv-lib
-
-const fetch = (...args) => import ('node-fetch').then(({default: fetch}) => fetch(...args));
-const startggURL = "https://api.start.gg/gql/alpha";
-const startggKey = process.env.STARTGG_KEY;
-
-const getEventID = (tournamentName, eventName) => {
-  const eventSlug =`tournamant/${tournamentName}/event/${eventName}`;
-  let eventId;
-  fetch (startggURL, {
-    method: 'POST',
-    headers: {
-      'content-type':'application/json',
-      'Accept' : 'application/json',
-      Authorization: 'Bearer ' + startggKey
-    },
-    body: JSON.stringify({
-      query: "query EventQuery($slug:String) {event(slug: $slug) {id name}}",
-      variables: {
-        slug:eventSlug
-      },
-    })
-  }).then(r => r.json())
-  .then(data => {
-    console.log(data.data);
-    eventId = data.data.event.id;
-  })
-  return eventId;
-}
-
-getEventID('spartan-circus-1','smash-ultimate-singles');
-*/
 
 const LOCATION = {
   lat: 42.723301,
@@ -109,8 +56,6 @@ const popupContentGatsby = `
  */
 
 
-
-
 const MapEffect = ({ markerRef }) => {
   const map = useMap();
 
@@ -134,7 +79,18 @@ const IndexPage = () => {
 
 
 
-  
+  const data = useStaticQuery(graphql`
+  query MyQuery {
+    startgg {
+      currentUser {
+        bio
+      }
+    }
+  }
+  `)
+
+
+
   return (
     <Layout pageName="home">
        <Map {...mapSettings}>
@@ -148,13 +104,26 @@ const IndexPage = () => {
             <li class="text-success">Communication Arts and Science Building - Room 154</li>
             <li class="text-success">404 Wilson Rd, East Lansing, MI 48824</li>
             <li><img src={MSU} class='w-25 p-5'alt="MSU Smash Ultimate Club Emblem"></img></li>
+            <li>{data.startgg.currentUser.bio}</li>
+
         </ul>   
       </Container>
+   
     </Layout>
   );
 };
-<span class="badge badge-secondary">New</span>
+
 export default IndexPage;
+
+
+
+
+
+
+
+
+
+
 
 /*
   export function Home ({data}) {
