@@ -9,6 +9,7 @@
     "url": "https://twitter.com/colbyfayock"
   },
   "dependencies": {
+    "@loadable/component": "^5.15.3",
     "bootstrap": "^5.2.3",
     "cypress": "^10.1.0",
     "dotenv": "^16.0.3",
